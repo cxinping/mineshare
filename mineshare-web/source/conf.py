@@ -54,7 +54,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'mineshare-web'
+project = 'mineshare'
 copyright = '2017, xinping'
 author = 'xinping'
 

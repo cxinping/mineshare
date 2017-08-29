@@ -177,6 +177,52 @@
 </ul>
 <div class="section" id="ticker">
 <h2>Ticker信息<a class="headerlink" href="#ticker" title="Permalink to this headline">¶</a></h2>
+<p>获得它的当前市场价格。</p>
+<p>参数说明：</p>
+<ul class="simple">
+<li>businessType：业务类型代码</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>swap-btc-cny</td>
+<td>比特币对人民币现货合约</td>
+</tr>
+<tr class="row-odd"><td>swap-eth-cny</td>
+<td>以太坊对人民币现货合约</td>
+</tr>
+<tr class="row-even"><td>swap-etc-cny</td>
+<td>以太经典对人民币现货合约</td>
+</tr>
+<tr class="row-odd"><td>swap-ltc-cny</td>
+<td>莱特币对人民币现货合约</td>
+</tr>
+</tbody>
+</table>
+<p>返回值说明：</p>
+<ul class="simple">
+<li>buy : 买一价</li>
+<li>date : 服务器的时间</li>
+<li>high : 最高价</li>
+<li>last : 最新价</li>
+<li>low : 最低价</li>
+<li>sell : 卖一价</li>
+<li>vol : 最近24小时成交量</li>
+</ul>
+<p>调用方法：</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mineshare</span> <span class="k">as</span> <span class="nn">ms</span>
+
+<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_ticker</span><span class="p">(</span><span class="s1">&#39;swap-btc-cny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id2">
 <h2>深度信息<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>

@@ -15,7 +15,7 @@
  
 Ticker信息
 -----------
-获得它的当前市场价格。
+获得虚拟币的当前市场价格。
 
 参数说明：
 
@@ -48,10 +48,60 @@ swap-ltc-cny   莱特币对人民币现货合约
 
     ms.get_coin_ticker('swap-btc-cny')
 
+结果显示：
+
+.. code:: python
+
+            buy           date     high     last      low     sell        vol
+
+     0  29000.1  1503986635719  29517.9  29052.8  28157.9  29099.9  1792.8017
+
+其他：
+
+.. code:: python
+
+     ms.get_coin_ticker('swap-eth-cny')  获得以太坊对人民币现货合约的当前市场价格
+
+     ms.get_coin_ticker('swap-etc-cny')  获得以太经典对人民币现货合约的当前市场价格
+
+     ms.get_coin_ticker('swap-ltc-cny')  获得莱特币对人民币现货合约的当前市场价格
 
 
 深度信息
 -----------
+获得虚拟币的市场深度信息
+
+参数说明：
+
+-  businessType：业务类型代码
+
+=============  ==============================   
+参数            说明      
+=============  ==============================   
+swap-btc-cny   比特币对人民币现货合约  
+swap-eth-cny   以太坊对人民币现货合约
+swap-etc-cny   以太经典对人民币现货合约
+swap-ltc-cny   莱特币对人民币现货合约
+=============  ==============================    
+
+-  size：需要获取的深度数量，非必填，默认买卖盘各50条。
+      
+返回值说明：
+	  
+调用方法：
+
+.. code:: python
+
+    import mineshare as ms
+
+    ms.get_coin_ticker('swap-btc-cny')
+
+
+结果显示：
+
+
+其他：
+
 
 
 最新成交记录

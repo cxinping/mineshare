@@ -7,9 +7,15 @@
  
  
  
- 
- 
- 
+.. toctree::
+    :maxdepth: 2
+    :numbered: 2
+
+    01_thanks
+    02_users
+    03_install
+    04_version
+	
  
  
  

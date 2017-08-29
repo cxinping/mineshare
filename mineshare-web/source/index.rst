@@ -9,13 +9,14 @@ Python 和数据科学
 
     这里是 Scott 在学习数据科学所写的学习笔记，欢迎交流与指教。
 
-	
+目录:
+^^^^^	
 
 .. toctree::
     :maxdepth: 2
     :glob:
     
-
+    trade/index
     tools/index
 
   

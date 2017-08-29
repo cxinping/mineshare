@@ -95,10 +95,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">交易数据</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ticker">Ticker信息</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">深度信息</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">最新成交记录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#k">K线信息</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">其他公共信息</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">通用参数说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">通用参数说明</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具篇</a></li>
@@ -207,16 +204,6 @@
 </tr>
 </tbody>
 </table>
-<p>返回值说明：</p>
-<ul class="simple">
-<li>buy : 买一价</li>
-<li>date : 服务器的时间</li>
-<li>high : 最高价</li>
-<li>last : 最新价</li>
-<li>low : 最低价</li>
-<li>sell : 卖一价</li>
-<li>vol : 最近24小时成交量</li>
-</ul>
 <p>调用方法：</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mineshare</span> <span class="k">as</span> <span class="nn">ms</span>
 
@@ -225,7 +212,6 @@
 </div>
 <p>结果显示：</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span>       <span class="n">buy</span>           <span class="n">date</span>     <span class="n">high</span>     <span class="n">last</span>      <span class="n">low</span>     <span class="n">sell</span>        <span class="n">vol</span>
-
 <span class="mi">0</span>  <span class="mf">29000.1</span>  <span class="mi">1503986635719</span>  <span class="mf">29517.9</span>  <span class="mf">29052.8</span>  <span class="mf">28157.9</span>  <span class="mf">29099.9</span>  <span class="mf">1792.8017</span>
 </pre></div>
 </div>
@@ -274,26 +260,51 @@
 <li>size：需要获取的深度数量，非必填，默认买卖盘各50条。</li>
 </ul>
 <p>返回值说明：</p>
+<ul class="simple">
+<li>price：成交价格</li>
+<li>amount：成交金额(元)</li>
+</ul>
 <p>调用方法：</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mineshare</span> <span class="k">as</span> <span class="nn">ms</span>
 
-<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_ticker</span><span class="p">(</span><span class="s1">&#39;swap-btc-cny&#39;</span><span class="p">)</span>
+<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_depth</span><span class="p">(</span><span class="s1">&#39;swap-btc-cny&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>结果显示：</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span>   <span class="n">amount_asks</span>  <span class="n">price_asks</span>  <span class="n">amount_bids</span>  <span class="n">price_bids</span>
+<span class="mi">0</span>     <span class="mf">0.023812</span>     <span class="mf">29396.5</span>     <span class="mf">0.068962</span>     <span class="mf">29001.3</span>
+<span class="mi">1</span>     <span class="mf">0.010222</span>     <span class="mf">29348.4</span>     <span class="mf">0.451755</span>     <span class="mf">28998.0</span>
+<span class="mi">2</span>     <span class="mf">0.010228</span>     <span class="mf">29330.4</span>     <span class="mf">0.220712</span>     <span class="mf">28997.0</span>
+<span class="mi">3</span>     <span class="mf">0.283081</span>     <span class="mf">29320.2</span>     <span class="mf">0.010352</span>     <span class="mf">28978.7</span>
+<span class="mi">4</span>    <span class="mf">17.508539</span>     <span class="mf">29305.7</span>     <span class="mf">0.010369</span>     <span class="mf">28932.0</span>
+<span class="mi">5</span>     <span class="mf">0.095557</span>     <span class="mf">29301.9</span>     <span class="mf">0.640138</span>     <span class="mf">28900.0</span>
+<span class="mi">6</span>     <span class="mf">0.010242</span>     <span class="mf">29290.5</span>     <span class="mf">0.377306</span>     <span class="mf">28889.0</span>
+<span class="mi">7</span>     <span class="mf">4.997489</span>     <span class="mf">29274.7</span>     <span class="mf">5.955982</span>     <span class="mf">28761.0</span>
+<span class="mi">8</span>     <span class="mf">0.041152</span>     <span class="mf">29160.2</span>     <span class="mf">1.439960</span>     <span class="mf">28750.8</span>
+<span class="mi">9</span>     <span class="mf">0.068631</span>     <span class="mf">29141.4</span>     <span class="mf">4.121587</span>     <span class="mf">28726.8</span>
+</pre></div>
+</div>
+<p>返回值说明：</p>
+<p>asks为卖盘，bids为买盘，以上数据以价格降序排列。</p>
+<ul class="simple">
+<li>amount_asks：卖盘成交金额(元)</li>
+<li>price_asks: 卖盘成交价格</li>
+<li>amount_bids: 买盘成交金额(元)</li>
+<li>price_bids: 买盘成交价格</li>
+</ul>
 <p>其他：</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mineshare</span> <span class="k">as</span> <span class="nn">ms</span>
+
+<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_depth</span><span class="p">(</span><span class="s1">&#39;swap-eth-cny&#39;</span><span class="p">)</span>
+
+<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_depth</span><span class="p">(</span><span class="s1">&#39;swap-etc-cny&#39;</span><span class="p">)</span>
+
+<span class="n">ms</span><span class="o">.</span><span class="n">get_coin_depth</span><span class="p">(</span><span class="s1">&#39;swap-ltc-cny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
-<h2>最新成交记录<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="k">
-<h2>K线信息<a class="headerlink" href="#k" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id4">
-<h2>其他公共信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id5">
-<h2>通用参数说明<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>通用参数说明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>businessType 业务类型代码</li>
 </ol>

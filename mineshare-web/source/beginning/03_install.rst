@@ -1,8 +1,6 @@
 =================
 下载安装
 =================
-
-  
  
  
 使用前提
@@ -20,9 +18,12 @@
 
 .. code:: python
 
-        pip install tushare
+        pip install mineshare
 
  
- 
- 
- 
+版本升级 
+------------- 
+
+.. code:: python
+
+        pip install mineshare --upgrade 

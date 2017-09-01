@@ -7,7 +7,7 @@ if sys.version_info < (3,):
 	
 setup( 
 	name='mineshare',
-	version='0.0.2',
+	version='0.0.5',
 	url='http://www.cnblogs.com/wangshuo1/',
 	license='',
 	keywords='Virtual currency data',	

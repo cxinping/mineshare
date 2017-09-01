@@ -1,10 +1,10 @@
-__version__ = '0.0.2'
+__version__ = '0.0.5'
 __author__ = 'xinping'
 
 
 """
 for trading data
 """
-from coinshare.public_markets.market import (sayHello , get_coin_ticker )
+from mineshare.public_markets.market import (sayHello , get_coin_ticker )
 								   
 								   

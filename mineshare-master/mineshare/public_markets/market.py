@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import sys
+sys.path.append('../')
+
 from .bitstar_sdk import ApiClient
 
 import pandas as pd 
-import config as cf
+#import config as cf
 
 def sayHello():
 	print('---- market hello')
